@@ -30,8 +30,6 @@ src/main/resources/application.properties
 ### Docker
 Build and start the app with:
 
----bash
-
 docker compose up --build
 
 ---
