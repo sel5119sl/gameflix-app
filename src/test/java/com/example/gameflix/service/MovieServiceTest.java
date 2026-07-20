@@ -44,12 +44,10 @@ class MovieServiceTest {
     }
 
     @Test
-    void getMovieById_ShouldReturnMovie_WhenFound() {
-        Movie expectedMovie =
-                new Movie(1L, "The Matrix", "Science Fiction");
+    void getMovieById_ShouldReturnMovie() {
+        Movie expectedMovie = new Movie(1L, "The Matrix", "Science Fiction");
 
-        when(movieRepository.findById(1L))
-                .thenReturn(Optional.of(expectedMovie));
+        when(movieRepository.findById(1L)).thenReturn(Optional.of(expectedMovie));
 
         Movie actualMovie = movieService.getMovieById(1L);
 
@@ -60,9 +58,8 @@ class MovieServiceTest {
     }
 
     @Test
-    void getMovieById_ShouldReturnNull_WhenMovieDoesNotExist() {
-        when(movieRepository.findById(99L))
-                .thenReturn(Optional.empty());
+    void getMovieById_ShouldReturnNull() {
+        when(movieRepository.findById(99L)).thenReturn(Optional.empty());
 
         Movie actualMovie = movieService.getMovieById(99L);
 
