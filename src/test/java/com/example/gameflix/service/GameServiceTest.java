@@ -45,11 +45,9 @@ class GameServiceTest {
 
     @Test
     void getGameById_ShouldReturnGame() {
-        Game expectedGame =
-                new Game(1L, "The Legend of Zelda", "Adventure");
+        Game expectedGame = new Game(1L, "The Legend of Zelda", "Adventure");
 
-        when(gameRepository.findById(1L))
-                .thenReturn(Optional.of(expectedGame));
+        when(gameRepository.findById(1L)).thenReturn(Optional.of(expectedGame));
 
         Game actualGame = gameService.getGameById(1L);
 
@@ -61,8 +59,7 @@ class GameServiceTest {
 
     @Test
     void getGameById_ShouldReturnNull() {
-        when(gameRepository.findById(99L))
-                .thenReturn(Optional.empty());
+        when(gameRepository.findById(99L)).thenReturn(Optional.empty());
 
         Game actualGame = gameService.getGameById(99L);
 
