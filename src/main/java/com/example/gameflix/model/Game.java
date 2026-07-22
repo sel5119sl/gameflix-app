@@ -6,7 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Movie {
+public class Game {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,15 +15,15 @@ public class Movie {
     private String title;
     private String genre;
 
-    public Movie() {
+    public Game() {
     }
 
-    public Movie(String title, String genre) {
+    public Game(String title, String genre) {
         this.title = title;
         this.genre = genre;
     }
 
-    public Movie(Long id, String title, String genre) {
+    public Game(Long id, String title, String genre) {
         this.id = id;
         this.title = title;
         this.genre = genre;
